@@ -69,6 +69,14 @@ function canvasApp() {
   var minColorValue;
   
   init();
+
+  async function loopWithDelay() {
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+      while(true){
+        startGenerate();
+        await delay(10000); // Wait for 1 second
+      }
+    }
   
   function init() {
     numCircles = 15; //35
@@ -79,7 +87,7 @@ function canvasApp() {
     numPoints = Math.pow(2,iterations)+1;
     drawsPerFrame = 4;
     
-    fullTurn = Math.PI*2*numPoints/(1+numPoints);
+    fullTurn = (Math.PI*2*numPoints/(1+numPoints));
     
     minX = -maxMaxRad;
     maxX = displayWidth + maxMaxRad;
@@ -98,8 +106,7 @@ function canvasApp() {
     urlColor = "#333333";
     
     lineWidth = 1.01;
-    
-    startGenerate();
+    loopWithDelay()
   }
     
   function startGenerate() {
