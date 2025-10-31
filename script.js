@@ -74,7 +74,7 @@ function canvasApp() {
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
       while(true){
         startGenerate();
-        await delay(10000); // Wait for 1 second
+        await delay(10000); // Wait for 10 seconds
       }
     }
   
@@ -148,16 +148,15 @@ function canvasApp() {
     b1 = minColorValue + Math.random()*(maxColorValue-minColorValue);
     
     
-    /*
     //can also set colors explicitly here if you like.
-    r1 = 90;
-    g1 = 60;
-    b1 = 20;
+    // r1 = 90;
+    // g1 = 60;
+    // b1 = 20;
     
-    r0 = 30;
-    g0 = 77;
-    b0 = 66;
-    */
+    // r0 = 30;
+    // g0 = 77;
+    // b0 = 66;
+  
     
     a = lineAlpha;
     
